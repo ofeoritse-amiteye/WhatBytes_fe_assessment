@@ -33,8 +33,8 @@ export default function Dashboard() {
       <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
         <main className="flex-1 lg:px-8 w-full px-3">
         <p className="text-gray-600 text-xl mt-7 mb-7">Skill Test</p>
-          <div className=" lg:flex gap-8">
-            <div className=" lg:w-[80%]">
+          <div className=" xl:flex gap-8">
+            <div className=" xl:w-[80%]">
               <SkillTestCard />
               <div className="mt-6">
                 <QuickStats />
