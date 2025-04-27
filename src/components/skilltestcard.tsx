@@ -49,7 +49,7 @@ export default function SkillTestCard() {
     setLocalPercentile(numValue);
 
     const parsed = numberSchema.safeParse(numValue);
-    setPercentileError(parsed.success ? "" : "required! percentile 0-100");
+    setPercentileError(parsed.success ? "" : "required! percentile 0 - 100");
   };
 
   const handleScoreChange = (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -62,17 +62,33 @@ export default function ComparisonGraph() {
             dataKey="students"
             stroke="#A9A9A9"
             strokeWidth={2}
-            dot={({ cx, cy, payload }) => {
+            dot={({ cx, cy, payload, index }) => {
               if (payload.percentile === percentile) {
                 return (
-                  <circle cx={cx} cy={cy} r={6} fill="blue" stroke="blue" strokeWidth={2} />
+                  <circle
+                    key={`dot-active-${index}`}
+                    cx={cx}
+                    cy={cy}
+                    r={6}
+                    fill="blue"
+                    stroke="blue"
+                    strokeWidth={2}
+                  />
                 );
               }
               return (
-                <circle cx={cx} cy={cy} r={3} fill="white" stroke="#A9A9A9" strokeWidth={2} />
+                <circle
+                  key={`dot-${index}`}
+                  cx={cx}
+                  cy={cy}
+                  r={3}
+                  fill="white"
+                  stroke="#A9A9A9"
+                  strokeWidth={2}
+                />
               );
             }}
-            activeDot={{ r: 6, fill: 'gray' }}
+            activeDot={{ r: 6, fill: "gray" }}
           />
           <ReferenceLine x={percentile} stroke="gray" strokeDasharray="3 3">
             <Label value="your percentile" position="insideLeft" angle={0} style={{ fill: 'gray', fontSize: 12 }} />
