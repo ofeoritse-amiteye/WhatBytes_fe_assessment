@@ -109,8 +109,7 @@ export default function SkillTestCard() {
         <div className="mt-5 md:mt-0 flex">
         <button
           onClick={handleOpenModal}
-          className=" px-8 py-3 hover:bg-blue-900 bg-blue-950 text-white rounded-md cursor-pointer"
-        >
+          className="px-8 py-3 bg-blue-950 text-white rounded-md cursor-pointer border-3 border-b-black border-r-black border-t-gray-500 border-l-gray-500 hover:bg-blue-900">
           Update
         </button>
         </div>
@@ -129,20 +128,20 @@ export default function SkillTestCard() {
               <div className="w-full flex flex-col gap-2">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center w-full">
-                    <p className="bg-blue-800 text-white rounded-full h-8 w-8 flex items-center justify-center mr-3">
+                    <p className="bg-blue-800 text-white rounded-full h-8 min-w-8 flex items-center justify-center mr-3">
                       1
                     </p>
-                    <label>
+                    <label className="mr-2">
                       Update your <span className="font-bold">Rank</span>
                     </label>
                   </div>
-                  <div className="flex justify-end">
+                  <div className="flex w-[50%] flex-col items-end">
                   <input
                     placeholder="Rank"
                     type="text"
                     value={localRank ?? ""}
                     onChange={handleRankChange}
-                    className={`h-10 w-[70%] md:w-full border rounded-lg p-2 outline-none ${
+                    className={`h-10 w-full md:w-full border rounded-lg p-2 outline-none ${
                       rankError ? "border-red-500" : "border-blue-600"
                     }`}
                   />
@@ -154,20 +153,20 @@ export default function SkillTestCard() {
               <div className="w-full flex flex-col gap-2">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center w-full">
-                    <p className="bg-blue-800 text-white rounded-full h-8 w-8 flex items-center justify-center mr-3">
+                    <p className="bg-blue-800 text-white rounded-full h-8 min-w-8 flex items-center justify-center mr-3">
                       2
                     </p>
-                    <label>
+                    <label className="mr-2">
                       Update your <span className="font-bold">Percentile</span>
                     </label>
                   </div>
-                  <div className="flex justify-end">
+                  <div className="flex w-[50%] flex-col items-end">
                   <input
                     placeholder="Percentile"
                     type="text"
                     value={localPercentile ?? ""}
                     onChange={handlePercentileChange}
-                    className={`h-10 w-[70%] md:w-full border rounded-lg p-2 outline-none ${
+                    className={`h-10 w-full md:w-full border rounded-lg p-2 outline-none ${
                       percentileError ? "border-red-500" : "border-blue-600"
                     }`}
                   />
@@ -181,20 +180,20 @@ export default function SkillTestCard() {
               <div className="w-full flex flex-col gap-2">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center w-full">
-                    <p className="bg-blue-800 text-white rounded-full h-8 w-8 flex items-center justify-center mr-3">
+                    <p className="bg-blue-800 text-white rounded-full h-8 min-w-8 flex items-center justify-center mr-3">
                       3
                     </p>
-                    <label>
+                    <label className="mr-2">
                       Update your <span className="font-bold">current score (out of 15)</span>
                     </label>
                   </div>
-                  <div className="flex justify-end">
+                  <div className="flex w-[50%] flex-col items-end">
                   <input
                     placeholder="Score"
                     type="text"
                     value={localScore ?? ""}
                     onChange={handleScoreChange}
-                    className={`h-10 w-[70%] md:w-full border rounded-lg p-2 outline-none ${
+                    className={`h-10 w-full md:w-full border rounded-lg p-2 outline-none ${
                       scoreError ? "border-red-500" : "border-blue-600"
                     }`}
                     />
@@ -214,7 +213,7 @@ export default function SkillTestCard() {
               <button 
                 onClick={handleSubmit}
                 disabled={localRank === undefined || localPercentile === undefined || localScore===undefined}
-                className={` px-12 ${localRank === undefined || localPercentile === undefined || localScore===undefined ? "bg-gray-400 cursor-not-allowed": "bg-blue-900 cursor-pointer"} rounded-lg font-bold text-white flex items-center gap-2`}
+                className={` px-12 ${localRank === undefined || localPercentile === undefined || localScore===undefined ? "bg-gray-400 cursor-not-allowed": "bg-blue-950 cursor-pointer border-3 border-b-black border-r-black border-t-gray-500 border-l-gray-500 hover:bg-blue-900 hover:to-blue-900"} rounded-lg font-bold text-white flex items-center gap-2`}
               >
                 save <FaArrowRight />
               </button>
