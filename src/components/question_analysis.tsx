@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useSkillStore } from "@/store/useskillstore";
 
 interface CircularProgressProps {
-  progress: number; // 0 to 100
+  progress: number;
 }
 
 export default function QuestionAnalysis({ progress }: CircularProgressProps) {
@@ -17,8 +17,8 @@ export default function QuestionAnalysis({ progress }: CircularProgressProps) {
         <h3 className="text-lg font-semibold text-black">Question Analysis</h3>
         <p className="text-blue-600 font-bold">{score}/15</p>
         </div>
-        <p className="text-sm text-gray-600 mt-2">
-          You scored <strong>10</strong> questions correct out of <strong>15</strong>. However it still needs some improvements.
+        <p className=" text-gray-600 mt-2">
+          You scored <strong>{score}</strong> questions correct out of <strong>15</strong>. However it still needs some improvements.
         </p>
         <div className="flex w-full justify-center">
         <div className="relative w-64 h-64">

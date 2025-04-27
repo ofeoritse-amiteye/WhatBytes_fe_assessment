@@ -12,6 +12,8 @@ import { useSkillStore } from "@/store/useskillstore";
 export default function Dashboard() {
   const {score} = useSkillStore();
   const [progress, setProgress]=useState<number | undefined>(undefined)
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const toggleSidebar = () => setSidebarOpen(!isSidebarOpen);
 
   useEffect(() => {
     const a = (score / 15) *100;
@@ -25,27 +27,27 @@ export default function Dashboard() {
 
   
   return (
-    <div className="">
-    <Navbar/>
-    <div className="flex pb-2 bg-gray-50">
-      <Sidebar />
-      <main className="flex-1 px-8">
-      <p className="text-gray-600 text-xl mt-7 mb-7">Skill Test</p>
-        <div className=" flex gap-8">
-          <div className=" w-[80%]">
-            <SkillTestCard />
-            <div className="mt-6">
-              <QuickStats />
-              <ComparisonGraph />
+    <div className=" bg-white min-h-screen">
+      <Navbar/>
+      <div className="flex pb-2 bg-gray-50 ">
+      <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+        <main className="flex-1 lg:px-8 w-full px-3">
+        <p className="text-gray-600 text-xl mt-7 mb-7">Skill Test</p>
+          <div className=" lg:flex gap-8">
+            <div className=" lg:w-[80%]">
+              <SkillTestCard />
+              <div className="mt-6">
+                <QuickStats />
+                <ComparisonGraph />
+              </div>
+            </div>
+            <div className="space-y-6">
+              <SyllabusAnalysis />
+              <QuestionAnalysis progress={progress || 0} />
             </div>
           </div>
-          <div className="space-y-6 ">
-            <SyllabusAnalysis />
-            <QuestionAnalysis progress={progress || 0} />
-          </div>
-        </div>
-      </main>
-    </div>
+        </main>
+      </div>
     </div>
   );
 }
