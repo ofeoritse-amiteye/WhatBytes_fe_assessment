@@ -35,7 +35,7 @@ export default function QuestionAnalysis({ progress }: CircularProgressProps) {
               cx="50%"
               cy="50%"
               r={radius}
-              stroke="#3B82F6" // blue progress
+              stroke="#3B82F6"
               strokeWidth="25"
               fill="transparent"
               strokeDasharray={circumference}

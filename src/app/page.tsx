@@ -22,7 +22,6 @@ export default function Dashboard() {
     } else {
       setProgress(0);
     }
-    console.log(score, a)
   }, [score]);
 
   

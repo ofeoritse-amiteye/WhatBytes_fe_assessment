@@ -68,16 +68,12 @@ export default function SkillTestCard() {
 
   const handleSubmit = () => {
     if (!localRank || !localPercentile || !localScore) {
-      alert("Fill all fields correctly!");
       return;
     }
 
-    // Update the store only when Save is clicked
     setRank(localRank);
     setPercentile(localPercentile);
     setScore(localScore);
-
-    console.log("Saved!", { rank: localRank, percentile: localPercentile, score: localScore });
     setShowModal(false);
   };
 
@@ -138,7 +134,7 @@ export default function SkillTestCard() {
                   <div className="flex w-[50%] flex-col items-end">
                   <input
                     placeholder="Rank"
-                    type="text"
+                    type="number"
                     value={localRank ?? ""}
                     onChange={handleRankChange}
                     className={`h-10 w-full md:w-full border rounded-lg p-2 outline-none ${
@@ -163,7 +159,7 @@ export default function SkillTestCard() {
                   <div className="flex w-[50%] flex-col items-end">
                   <input
                     placeholder="Percentile"
-                    type="text"
+                    type="number"
                     value={localPercentile ?? ""}
                     onChange={handlePercentileChange}
                     className={`h-10 w-full md:w-full border rounded-lg p-2 outline-none ${
@@ -190,7 +186,7 @@ export default function SkillTestCard() {
                   <div className="flex w-[50%] flex-col items-end">
                   <input
                     placeholder="Score"
-                    type="text"
+                    type="number"
                     value={localScore ?? ""}
                     onChange={handleScoreChange}
                     className={`h-10 w-full md:w-full border rounded-lg p-2 outline-none ${
