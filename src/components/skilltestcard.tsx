@@ -40,7 +40,7 @@ export default function SkillTestCard() {
 
   const handlePercentileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    if (value.trim() === "") {
+    if (value.trim() === "" || Number(value) > 100) {
       setLocalPercentile(undefined);
       setPercentileError("required! percentile 0-100");
       return;
